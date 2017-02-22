@@ -1,0 +1,504 @@
+/* -----------------------------------------
+
+yellow: #fbd334
+
+light grey: #f6f6f6
+
+text: #222;
+
+grey background: #ececec;
+
+-------------------------------------------- */
+@font-face {
+  font-family: "PFDinTextCompProBold";
+  src: url("../fonts/PFDinTextCompPro-Bold.ttf")  format("truetype"); /* Safari, Android, iOS */
+}
+
+/* -----------------------------------------
+Helpers
+-------------------------------------------- */
+
+* {
+  box-sizing: border-box;
+}
+
+.cf:before,
+.cf:after {
+    content: " "; /* 1 */
+    display: table; /* 2 */
+}
+
+.cf:after {
+    clear: both;
+}
+
+
+/* -----------------------------------------
+Global
+-------------------------------------------- */
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+  position: relative;
+  height: 100%;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  margin: 0; /* bottom = footer height */
+  padding: 0;
+  color: #4C160C; /* Dark Brown */
+  margin: 0;
+  background-color: #FFFDD4; /* Cream */
+/*   height: 100%; */
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+li {
+  margin-bottom: .5rem;
+  font-size: .95rem;
+  line-height: 1.4;
+}
+
+ul {
+  list-style: none;
+  padding-bottom: 0;
+  padding-left: 1rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li::before {
+  content: "";
+  border-color: transparent #222;
+  border-style: solid;
+  border-width: 0.25em 0 0.25em 0.35em;
+  display: block;
+  height: 0;
+  width: 0;
+  left: -1em;
+  top: .95em;
+  position: relative;
+}
+
+section {
+  padding: 1.5rem 6rem;
+}
+
+.main-section {
+  padding: 2rem 0 0;
+}
+
+.main-section ul {
+  padding-bottom: 1rem;
+}
+
+.hw-title {
+  cursor: pointer;
+  color: #E38927;
+  border-bottom: 2px solid #E38927;
+  display: inline-block;
+}
+
+.hw-content {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all .3s ease-in-out;
+}
+
+.hw-content.active {
+  height: 100%;
+    opacity: 1;
+}
+
+.requirements {
+  border: 2px solid #4C160C; /* Dark Brown */
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 1.5rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+/* -----------------------------------------
+Header
+-------------------------------------------- */
+header {
+  margin: 0;
+  padding: 24px 96px;
+  padding: 2.8rem 6rem;
+  border-top: 4px solid #E38927; /* Orange */
+  border-bottom: 4px solid #E38927; /* Orange */
+}
+
+.fa.hamburger {
+  position: absolute;
+  top: 3.2rem;
+  right: 2rem;
+  font-size: 1.65rem;
+  display: none;
+}
+
+/* -----------------------------------------
+Footer
+-------------------------------------------- */
+footer {
+  color: #4C160C; /* Dark Brown */
+  background-color: #E38927; /* Orange */
+  padding: .5rem 6rem;
+  clear: both;
+/*   position: absolute;
+  left: 0;
+  bottom: 0; */
+  height: 61px;
+/*   width: 100%; */
+
+}
+
+nav {
+  text-align: center;
+  padding: 1.25rem 0 .8rem;
+}
+
+nav li::before {
+  display: none;
+}
+
+nav li {
+  display: inline-block;
+  padding: 0 1.5rem;
+}
+
+nav li a {
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 2px solid transparent;
+}
+
+.selected,
+.lesson-links .selected {
+  transition: all .4s ease-in-out;
+  border-bottom: 2px solid #FFFDD4; /* Cream */
+}
+
+.lesson-links {
+  padding: 0;
+  margin-bottom: 3rem;
+}
+
+
+
+
+
+
+
+/* -----------------------------------------
+Type
+-------------------------------------------- */
+
+a {
+  text-decoration: none;
+  border-bottom: 2px solid #4C160C; /* Dark Brown */
+  padding-bottom: 1px;
+  color: #4C160C; /* Dark Brown */
+}
+
+@font-face {
+  font-family: 'Alba Super';
+  src: url('../fonts/alba_super.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/alba_super.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/alba_super.ttf')  format('truetype');
+}
+
+h1 {
+  font-family: 'Alba Super';
+  color: #E38927; /* Orange */
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.5;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  margin-bottom: 0;
+  margin-top: 0;
+  letter-spacing: 0.01em;
+
+}
+
+h1 a {
+  border-bottom-width: 4px;
+}
+
+h2 {
+  line-height: 1.2;
+  font-size: 18px;
+  font-size: .95rem;
+  font-weight: 700;
+  letter-spacing: 0px;
+  letter-spacing: .03rem;
+  text-transform: uppercase;
+}
+
+p {
+  line-height: 1.4;
+}
+
+h3 {
+  margin-top: 30px;
+}
+
+/* -----------------------------------------
+Buttons
+-------------------------------------------- */
+
+button {
+  margin-bottom: 3px;
+  padding: 16px 32px 16px;
+  padding: 1rem 2rem 1rem;
+  border: 0;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  border-radius: 3px;
+  -webkit-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
+  color: #fff;
+  background-color: #fa4542;
+  box-shadow: 0 3px 0 0 #be0201;
+}
+
+/* -----------------------------------------
+Expandable Lists
+-------------------------------------------- */
+
+.expandable h2 {
+    margin: 0;
+    padding: 0 32px 20px 0;
+    padding: 0 2rem 1.25rem 0;
+    text-align: left;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+    font-size: .95rem;
+}
+
+.expandable {
+  width: 100%;
+  margin: 0 0 32px;
+  margin: 0 0 2.5rem;
+  padding: 0 0 0;
+  padding: 0 3rem 4rem 3rem;
+}
+
+.expandable nav {
+  background-color: #E38927; /* Orange */
+}
+
+.lesson-links li {
+  display: block;
+  float: left;
+  width: 33%;
+  margin-bottom: 0;
+}
+
+.lesson-links a {
+  padding: 1rem 0 .2rem;
+  margin-bottom: .8rem;
+  display: inline-block;
+  color: #FFFDD4; /* Cream */
+  border-bottom: 2px solid transparent;
+
+}
+
+.current a {
+  border-bottom: 2px solid #FFFDD4; /* Cream */
+}
+
+.intro {
+  background-color: #ececec;
+}
+
+.intro li {
+  display: inline-block;
+}
+
+.milestones {
+  float: none;
+  width: 100%;
+}
+
+.expandable-item {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.reminders {
+  background-color: #FFFDD4; /* Cream */
+  border-radius: 4px;
+  padding: .6rem 1rem .2rem;
+  margin: 0 -1rem 1.5rem;
+/*   border: 2px solid #E38927; /* Orange */ */
+}
+
+/* -----------------------------------------
+Sidebar
+-------------------------------------------- */
+
+main {
+  position:  relative;
+  padding-left: 20%;
+  display: flex;
+  flex: 1;
+}
+
+aside {
+  background-color: #4C160C; /* Dark Brown */
+  width: 20%;
+  height: 100%;
+  padding: 3rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+aside ul {
+  padding-left: 0;
+  padding-bottom: .5rem;
+}
+
+aside li::before {
+  display: none;
+}
+
+aside li {
+  margin-bottom: 1rem;
+}
+
+
+.lesson-links {
+  margin-left: -3rem;
+  margin-right: -3rem;
+}
+/* -----------------------------------------
+Grid
+-------------------------------------------- */
+.col-6 {
+  width: 50%;
+  float: left;
+  padding-left: 2rem;
+}
+
+.col-6:first-of-type {
+  text-align: right;
+  padding-right: 2rem;
+  padding-left: 0;
+  border-right: 2px solid #222;
+}
+
+/* -----------------------------------------
+Theme
+-------------------------------------------- */
+.highlight {
+  background-color: #AA4E29; /* Brown */
+}
+
+.highlight a {
+  color: #FFFDD4; /* Cream */
+}
+
+.short {
+  min-height: 450px;
+}
+
+
+/* -----------------------------------------
+Media Queries
+-------------------------------------------- */
+
+
+@media only screen and (max-width: 990px) {
+
+
+  header, section, footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  html {
+    font-size: 14px;
+  }
+
+
+}
+
+@media only screen and (max-width: 650px) {
+  main {
+    padding-left: 0;
+  }
+
+  .long-title a {
+    display: none;
+  }
+
+  .expandable {
+    width: 100%;
+  }
+
+ /*  .fa.hamburger {
+    display: block;
+  } */
+
+  aside {
+    top: 8rem;
+    position: fixed;
+    max-height: 0;
+    width: 100%;
+    z-index: 100;
+    overflow: hidden;
+    padding: 0 1rem;
+    height: auto;
+    transition: max-height 0.3s ease-in-out;
+  }
+
+  .open {
+    max-height: 1000px;
+  }
+
+  aside div {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+}
+
+
+@media only screen and (max-width: 520px) {
+
+  html {
+    font-size: 13px;
+  }
+
+
+
+  header, section, footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1 span {
+    display: none;
+  }
+  
+}
